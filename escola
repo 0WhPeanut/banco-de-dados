@@ -1,0 +1,36 @@
+CREATE DATABASE escola;
+USE escola;
+
+create table aluno
+(
+
+	codAluno INT PRIMARY KEY,
+    nome VARCHAR(100),
+    rua VARCHAR(100),
+    num int,
+    bairro VARCHAR(50)
+
+);
+
+create table disciplima
+(
+
+	codDisc INT,
+    nome VARCHAR(100),
+    ch INT
+
+);
+
+create table matricula
+(
+	
+	codAluno INT NOT NULL,
+    codDis INT NOT NULL,
+    
+    PRIMARY KEY(codAluno, codDis),
+    FOREIGN KEY(CodAluno) references aluno(codAluno) on delete cascade on update cascade,
+    FOREIGN KEY(CodDis) references disciplina(codDis) on delete cascade on update cascade
+
+
+
+);
