@@ -29,8 +29,8 @@ create table personagem (
 
     PRIMARY KEY (codFilme, codAtor),
 
-    FOREIGN KEY (codFilme) REFERENCES filme(codFilme),
-    FOREIGN KEY (codAtor) REFERENCES ator(codAtor)
+    FOREIGN KEY (codFilme) REFERENCES filme(codFilme) on DELETE CASCADE on UPDATE CASCADE,
+    FOREIGN KEY (codAtor) REFERENCES ator(codAtor) on DELETE CASCADE on UPDATE CASCADE
 );
 
 
